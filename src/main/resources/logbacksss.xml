@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--<include resource="logback-${spring.profiles.active}.xml"/>-->
+    <!--日志级别 TRACE/DEBUG/INFO/WARN/ERROR/FATAL/OFF http://www.tuicool.com/articles/bYraIny -->
+    <!--定义日志文件的存储地址，在当前的包下，生成logs文件夹 -->
+    <!--<property name="log.base" value="./logs"/> &lt;!&ndash; 日志路径 &ndash;&gt;-->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <property name="log.base" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}"/> <!-- 日志路径 -->
+
+    <!--<include resource="org/springframework/boot/logging/logback/base.xml"/>-->
+    <!-- 配置控制台输出(ConsoleAppender),定义一个别名stdout(随意定义) -->
+    <appender name="STDUDO" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!-- 表示输出格式为2017-07-26 11:14:56 2865 [INFO] [某个class:第几行] - 信息
+             %d{yyyy-MM-dd HH:mm:ss}表示日期 %-4relative表示启动方法的毫秒数 -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-4relative [%level] [%class:%line] - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- info信息输出 RollingFileAppender回滚策略 -->
+    <appender name="FILE_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--See http://logback.qos.ch/manual/appenders.html#RollingFileAppender-->
+        <!--and http://logback.qos.ch/manual/appenders.html#TimeBasedRollingPolicy-->
+        <!--for further documentation-->
+        <!-- 文件写入路径 -->
+        <!--<File>${log.base}/info_</File>-->
+        <Append>true</Append>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!-- %-4relative启动毫秒数 [%thread] 所在线程 %-5level级别从左(%-表示左对齐，不加，则右对齐)显示5个字符宽度
+            %msg：日志消息；%n是换行符-->
+            <pattern>%-4relative [%thread] %-5level %logger{30} - %msg%n</pattern>
+        </encoder>
+
+        <!-- 过滤掉所有低于INFO级别的日志 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <!-- 回滚策略按每日回滚(可以设置大小)写入文件，若设置可以按文件大小分配日志，则需要配置%i -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- 日志回滚，按天数记录每天日志 -->
+            <fileNamePattern>${log.base}/%d{yyyy-MM-dd}/info_.%i.log</fileNamePattern>
+            <!--最多保留30天log,超过10M文件重新生成另一个文件，比如info_.1.log,info_.2.log-->
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!-- error信息输出 -->
+    <appender name="FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--See http://logback.qos.ch/manual/appenders.html#RollingFileAppender-->
+        <!--and http://logback.qos.ch/manual/appenders.html#TimeBasedRollingPolicy-->
+        <!--for further documentation-->
+        <Append>true</Append>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!-- %-4relative启动毫秒数 [%thread] 所在线程 %-5level级别从左(%-表示左对齐，不加，则右对齐)显示5个字符宽度
+            %msg：日志消息；%n是换行符-->
+            <pattern>%-4relative [%thread] %-5level %logger{30} - %msg%n</pattern>
+        </encoder>
+
+        <!-- 过滤掉所有低于INFO级别的日志 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <!-- 回滚策略按每日回滚(可以设置大小)写入文件，若设置可以按文件大小分配日志，则需要配置%i -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- 日志回滚，按天数记录每天日志 -->
+            <fileNamePattern>${log.base}/%d{yyyy-MM-dd}/error_.%i.log</fileNamePattern>
+            <!--最多保留30天log,超过10M文件重新生成另一个文件，比如info_.1.log,info_.2.log-->
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+    <!-- 自定义日志级别 -->
+    <logger name="org.springframework.web" level="INFO"/>
+    <logger name="org.springframework" level="WARN"/>
+    <!-- hibernate只显示级别为WARN的日志 -->
+    <logger name="org.hibernate" level="WARN"/>
+    <root level="DEBUG">
+        <appender-ref ref="FILE_INFO"/>
+        <appender-ref ref="FILE_ERROR"/>
+        <appender-ref ref="STDUDO"/>
+    </root>
+</configuration>

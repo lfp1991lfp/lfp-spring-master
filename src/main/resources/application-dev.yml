@@ -1,0 +1,91 @@
+server:
+   context-path: /demo
+   port: 8082
+security:
+  user:
+    name: admin
+    password: test
+spring:
+  application:
+    name: admin-managee
+  datasource:
+    druid:
+#      最大活跃数
+      max-active: 20
+      initial-size: 1
+      min-idle: 3
+#      最大连接数
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      filters: stat,wall,log4j,config
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000;config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALXnr5ASMQNzG9Fjbl6WH/hShIwwpiVhFohXkBbpM9zdifm2dofE3DcqG7eFR1FBGqBDPdDZHuvfI9ELsnyEI5ECAwEAAQ==
+      stat-view-servlet:
+        login-username: lfp
+        login-password: lfp
+        url-pattern: /druid/*
+        reset-enable: false
+        allow: 10.98.56.181,10.98.56.184,127.0.0.1
+      web-stat-filter:
+        url-pattern: /*
+        exclusions: \*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*
+      url: jdbc:mysql://localhost:3306/caoyi?serverTimezone=UTC&characterEncoding=UTF-8
+      username: root
+#    lfp1991lfp
+      password: s8X1sR9oLV3+Dj7dWKaSSNZ751ZOEMBbV+7vqu9x/1y3WeAJGgjSppBK/fdzqRSuvKLVfAt9xl7R/nLQCFNgXw==
+      driver-class-name: com.mysql.jdbc.Driver
+  mvc:
+    static-path-pattern: /**
+#    自定义异常的内容
+    throw-exception-if-no-handler-found: true
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+#    不映射资源文件
+    add-mappings: false
+  aop:
+    auto: true
+    proxy-target-class: true
+  jackson:
+    serialization:
+       write-dates-as-timestamps: false
+    default-property-inclusion: non_null
+    joda-date-time-format: yyyy-MM-dd'T'HH:mm:ss.SSSZ
+#  redis数据库配置
+  redis:
+#  数据库索引
+    database: 0
+#  数据库服务器地址
+    host: localhost
+    port: 6379
+    password: lfp
+    pool:
+      max-active: 8
+      max-idle: 8
+      max-wait: -1
+      min-idle: 0
+    timeout: 6000
+springfox:
+   documentation:
+      swagger:
+         v2:
+           path: /api/v1
+management:
+  security:
+    enabled: false
+
+mybatis:
+  mapper-locations: classpath:/xml/*Mapper.xml
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+  pageSizeZero: true
+mapper:
+  mappers:
+     - com.hytch.lfpspringmaster.config.mapper.MyMapper
+  not-empty: false
+  identity: MYSQL

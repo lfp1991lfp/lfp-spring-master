@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--<include resource="logback-${spring.profiles.active}.xml"/>-->
+    <!--日志级别 TRACE/DEBUG/INFO/WARN/ERROR/FATAL/OFF http://www.tuicool.com/articles/bYraIny -->
+    <!--<include resource="org/springframework/boot/logging/logback/defaults.xml" />-->
+    <!--<property name="LOG_FILE" value="${-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}"/> &lt;!&ndash; 日志路径 &ndash;&gt;-->
+
+    <!--<include resource="org/springframework/boot/logging/logback/base.xml"/>-->
+
+    <springProfile name="pro">
+        <include resource="logback-pro.xml"/>
+    </springProfile>
+    <springProfile name="dev">
+        <include resource="logback-dev.xml"/>
+    </springProfile>
+</configuration>

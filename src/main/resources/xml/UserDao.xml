@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hytch.lfpspringmaster.model.mapper.UserDao">
+  <resultMap id="BaseResultMap" type="com.hytch.lfpspringmaster.model.UserInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="u_i_id" jdbcType="INTEGER" property="id" />
+    <result column="u_i_userName" jdbcType="VARCHAR" property="username" />
+    <result column="u_i_nickName" jdbcType="VARCHAR" property="nickname" />
+    <result column="u_i_passWrd" jdbcType="VARCHAR" property="passwrd" />
+    <result column="u_i_tag" jdbcType="CHAR" property="tag" />
+    <result column="u_i_createDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="u_i_updateDate" jdbcType="TIMESTAMP" property="updatedate" />
+    <result column="u_i_groupCode" jdbcType="VARCHAR" property="groupcode" />
+    <result column="u_i_remark" jdbcType="VARCHAR" property="remark" />
+    <result column="u_i_salt" jdbcType="VARCHAR" property="salt" />
+  </resultMap>
+</mapper>

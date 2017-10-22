@@ -2,13 +2,13 @@ package com.hytch.lfpspringmaster.config.mvc;
 
 import com.hytch.lfpspringmaster.config.mvc.interceptor.CacheControlInterceptor;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.CacheControl;
 import org.springframework.web.filter.ShallowEtagHeaderFilter;
 import org.springframework.web.servlet.config.annotation.*;
 
 import javax.servlet.Filter;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 配置mvc配置
@@ -28,7 +28,10 @@ public class ApplicationConfigMVC extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("swagger-ui.html")
 				.addResourceLocations("classpath:/META-INF/resources/");
 		registry.addResourceHandler("/webjars/**")
-				.addResourceLocations("classpath:/META-INF/resources/webjars/");
+				.addResourceLocations("classpath:/META-INF/resources/webjars/")
+				.setCacheControl(CacheControl
+						.maxAge(365, TimeUnit.DAYS)
+						.cachePublic());
 		super.addResourceHandlers(registry);
 	}
 

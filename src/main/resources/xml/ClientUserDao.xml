@@ -13,7 +13,7 @@
     <result column="c_u_CLIENT_VERSION_NAME" jdbcType="VARCHAR" property="clientVersionName" />
     <result column="c_u_CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
     <result column="c_u_UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="c_u_ID_DELETE" jdbcType="BIT" property="idDelete" />
+      <result column="c_u_IS_DELETE" jdbcType="BIT" property="isDelete"/>
     <result column="c_u_IS_FROZEN" jdbcType="BIT" property="isFrozen" />
     <result column="c_u_CLIENT_TYPE" jdbcType="VARCHAR" property="clientType" />
     <result column="c_u_PHONE_SYS" jdbcType="VARCHAR" property="phoneSys" />

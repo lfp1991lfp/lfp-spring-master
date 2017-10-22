@@ -6,10 +6,11 @@ public interface ClientUserService {
 	/**
 	 * 登陆的用户名和密码找到用户.
 	 *
-	 * @param clientUser 用户信息
+	 * @param account  用户账号
+	 * @param password 用户密码
 	 * @return 当前登录的用户信息
 	 */
-	ClientUser findClientUser(ClientUser clientUser);
+	ClientUser findClientUser(String account, String password);
 
 	/**
 	 * 通过id找到客户端用户.

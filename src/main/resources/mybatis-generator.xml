@@ -9,11 +9,13 @@
     <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
-
+        <!-- include the plugin -->
         <plugin type="${mapper.plugin}">
             <property name="mappers" value="${mapper.Mapper}"/>
         </plugin>
 
+        <!-- 该插件主要是把setter,getter简写 -->
+        <plugin type="com.github.dongfg.plugin.LombokPlugin"/>
         <commentGenerator>
             <!-- 忽略注释 -->
             <property name="suppressAllComments" value="false"/>

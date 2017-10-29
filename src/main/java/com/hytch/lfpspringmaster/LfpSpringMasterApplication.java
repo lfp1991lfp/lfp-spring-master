@@ -29,7 +29,6 @@ public class LfpSpringMasterApplication {
 	CommandLineRunner init(StorageService storageService) {
 		return (args) -> {
 			storageService.deleteAll();
-			storageService.init();
 		};
 	}
 }

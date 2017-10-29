@@ -1,5 +1,6 @@
 package com.hytch.lfpspringmaster.api;
 
+import com.hytch.lfpspringmaster.base.Result;
 import com.hytch.lfpspringmaster.sys.upload.service.StorageService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -11,7 +12,9 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * 上传文件控制器.
@@ -31,30 +34,54 @@ public class UploadController {
 		this.storageService = storageService;
 	}
 
-	@ApiOperation(value = "导入用户", notes = "导入用户", response = String.class, tags = {})
+	@ApiOperation(value = "单文件上传", notes = "单文件上传")
 	@ApiResponses(value = {@ApiResponse(code = 200, message = "successful operation", response = String.class),
 			@ApiResponse(code = 400, message = "Invalid mobile supplied", response = String.class),
 			@ApiResponse(code = 404, message = "server not available", response = String.class)})
-	@PostMapping(value = "/importCustomer", produces = {"application/json"})
+	@PostMapping(value = "/importSingle", produces = {"application/json"})
 
 	public String uploadSuccess(
-			HttpServletRequest request,
 			@RequestParam("importFile") MultipartFile importFile) {
 		if (importFile.isEmpty()) {
 			return "false";
 		}
-		String fileName = importFile.getOriginalFilename();
-		int size = (int) importFile.getSize();
-		log.debug(fileName + "-->" + size);
-
-		String filePath = request.getSession().getServletContext().getRealPath("upload/");
-		log.debug("保存文件路径＝" + filePath);
-		try {
-			storageService.store(importFile);
-		} catch (Exception e) {
-			return "upload file fail" + e.getMessage();
-		}
+		storageService.store(importFile);
 		return "upload success";
+	}
+
+	@ApiOperation(value = "多文件上传", notes = "多文件上传")
+	@ApiResponses(value = {@ApiResponse(code = 200, message = "successful operation", response = String.class),
+			@ApiResponse(code = 400, message = "Invalid mobile supplied", response = String.class),
+			@ApiResponse(code = 404, message = "server not available", response = String.class)})
+	@PostMapping(value = "/importMultiple", produces = {"application/json"})
+	public String multiUploadSuccess(
+			@RequestParam("importFile") MultipartFile[] importFile) {
+
+		storageService.stores(Arrays.asList(importFile));
+		return "upload success";
+	}
+
+	@ApiOperation(value = "多文件上传测试", notes = "多文件上传测试")
+	@ApiResponses(value = {@ApiResponse(code = 200, message = "successful operation", response = String.class),
+			@ApiResponse(code = 400, message = "Invalid mobile supplied", response = String.class),
+			@ApiResponse(code = 404, message = "server not available", response = String.class)})
+	@PostMapping(value = "/importMultipleTest", produces = {"application/json"})
+	public Result multiUploadSuccess(
+			@RequestParam(value = "importFile1", required = false) MultipartFile importFile1,
+			@RequestParam(value = "importFile2", required = false) MultipartFile importFile2,
+			@RequestParam(value = "importFile3", required = false) MultipartFile importFile3,
+			@RequestParam(value = "importFile4", required = false) MultipartFile importFile4,
+			@RequestParam(value = "importFile5", required = false) MultipartFile importFile5) {
+
+		List<MultipartFile> files = new ArrayList<>();
+		files.add(importFile1);
+		files.add(importFile2);
+		files.add(importFile3);
+		files.add(importFile4);
+		files.add(importFile5);
+
+		storageService.stores(files);
+		return new Result("upload success");
 	}
 
 	@ApiOperation(value = "删除文件", notes = "删除文件")

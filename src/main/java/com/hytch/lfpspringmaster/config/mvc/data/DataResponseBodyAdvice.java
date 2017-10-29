@@ -52,8 +52,13 @@ public class DataResponseBodyAdvice implements ResponseBodyAdvice {
 			}
 
 			return template;
+		} else {
+			ResponseTemplate template = new ResponseTemplate();
+			template.setData(body);
+
+			return template;
 		}
 
-		return body;
+//		return body;
 	}
 }

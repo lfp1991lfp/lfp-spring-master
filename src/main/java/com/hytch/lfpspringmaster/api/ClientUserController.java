@@ -60,8 +60,9 @@ public class ClientUserController {
 	@ApiOperation(value = "更新用户", notes = "根据用户id更新用户",
 			response = ClientUser.class)
 	@PutMapping(value = "update/{id}")
-	public ClientUser update(@PathVariable("id") String id,
-													 @RequestBody ClientUser clientUser) throws ServiceApiException {
+	public ClientUser update(
+			@PathVariable("id") String id,
+			@RequestBody ClientUser clientUser) throws ServiceApiException {
 
 		return clientUserService.update(id, clientUser);
 	}

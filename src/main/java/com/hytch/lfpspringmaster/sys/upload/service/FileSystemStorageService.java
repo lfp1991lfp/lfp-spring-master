@@ -12,10 +12,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.nio.file.FileAlreadyExistsException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
+import java.util.List;
 import java.util.stream.Stream;
 
 @Service
@@ -30,17 +28,15 @@ public class FileSystemStorageService implements StorageService {
 
 	@Override
 	public void store(MultipartFile file) {
-		try {
-			if (file.isEmpty()) {
-				throw new StorageException("Failed to store empty file " + file.getOriginalFilename());
-			}
-			if (!rootLocation.isAbsolute()) {
-				init();
-			}
-			Files.copy(file.getInputStream(), this.rootLocation.resolve(file.getOriginalFilename()));
-		} catch (IOException e) {
-			throw new StorageException("Failed to store file " + file.getOriginalFilename(), e);
+		uploadFile(file);
+	}
+
+	@Override
+	public void stores(List<MultipartFile> files) {
+		if (files == null || files.size() == 0) {
+			throw new StorageException("Failed to store empty files ");
 		}
+		files.forEach(this::uploadFile);
 	}
 
 	@Override
@@ -81,15 +77,42 @@ public class FileSystemStorageService implements StorageService {
 		FileSystemUtils.deleteRecursively(rootLocation.toFile());
 	}
 
-	@Override
-	public void init() throws IOException {
+	private Path init(String suffix) {
 		try {
 //			Files.createDirectory(rootLocation);   //单个目录
-			Files.createDirectories(rootLocation); //多级目录
+			return Files.createDirectories(Paths.get(rootLocation.toString(), "/" + suffix)); //多级目录
 		} catch (FileAlreadyExistsException e) {
 //			throw new StorageException("Could not initialize storage", e);
 		} catch (IOException e) {
 			throw new StorageException("Could not initialize storage", e);
+		}
+
+		return null;
+	}
+
+	private void uploadFile(MultipartFile file) {
+		try {
+			if (file == null || file.isEmpty()) {
+				return;
+			}
+			String fileName = file.getOriginalFilename();
+			int index = fileName.lastIndexOf(".");
+			String suffix = fileName.substring(index + 1);
+			//若是没有后缀，则创建临时文件夹
+			if (index == -1) {
+				suffix = "tmp";
+			}
+
+			if (!rootLocation.isAbsolute()) {
+				Path path = init(suffix);
+				if (path == null) {
+					throw new StorageException("获取存储路径不存在");
+				}
+				Files.copy(file.getInputStream(),
+						path.resolve(file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
+			}
+		} catch (IOException e) {
+			throw new StorageException("Failed to store file " + file.getOriginalFilename(), e);
 		}
 	}
 }

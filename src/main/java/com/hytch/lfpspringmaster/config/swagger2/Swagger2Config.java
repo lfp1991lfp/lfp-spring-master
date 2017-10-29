@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import springfox.documentation.annotations.ApiIgnore;
 import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.ImplicitGrantBuilder;
+import springfox.documentation.builders.OAuthBuilder;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
@@ -41,6 +43,7 @@ public class Swagger2Config {
 				.apis(RequestHandlerSelectors.any())   //把所有扫描到的api都显示出来
 				.paths(or(regex("/api/.*")))  //匹配路径为/api/.*的api显示到doc文档上
 				.build()
+				.securitySchemes(newArrayList(new BasicAuth("test")))
 //				.pathProvider()     //这个主要是修改项目的访问地址
 				.apiInfo(apiInfo());
 //				.pathMapping("/")
@@ -57,7 +60,7 @@ public class Swagger2Config {
 //								.message("500 message")
 //								.responseModel(new ModelRef("Error"))
 //								.build()))
-////				.securitySchemes(newArrayList(apiKey()))
+//				.securitySchemes(newArrayList(apiKey()))
 ////				.securityContexts(newArrayList(securityContext()))
 //				.enableUrlTemplating(true);
 //				.globalOperationParameters(
@@ -68,6 +71,27 @@ public class Swagger2Config {
 //								.parameterType("query")
 //								.required(true)
 //								.build()))
+	}
+
+	SecurityScheme oauth() {
+		return new OAuthBuilder()
+				.name("petstore_auth")
+				.grantTypes(grantTypes())
+				.scopes(scopes())
+				.build();
+	}
+
+	private List<GrantType> grantTypes() {
+		GrantType grantType = new ImplicitGrantBuilder()
+				.loginEndpoint(new LoginEndpoint("http://localhost:8082/user/2"))
+				.build();
+		return newArrayList(grantType);
+	}
+
+	private List<AuthorizationScope> scopes() {
+		return newArrayList(
+				new AuthorizationScope("write:pets", "modify pets in your account"),
+				new AuthorizationScope("read:pets", "read your pets"));
 	}
 
 	private ApiKey apiKey() {

@@ -61,6 +61,27 @@ public class ApplicationConfigMVC extends WebMvcConfigurerAdapter {
 		return new ShallowEtagHeaderFilter();
 	}
 
+	//代码设置文件路径 Servlet3.0
+//	@Bean
+//	MultipartConfigElement multipartConfigElement() {
+//		MultipartConfigFactory factory = new MultipartConfigFactory();
+//		factory.setLocation("/app/pttms/tmp");
+//		return factory.createMultipartConfig();
+//	}
+
+	//显示声明CommonsMultipartResolver为mutipartResolver 老的方法Jakarta Commons FileUpload
+//	@Bean(name = "multipartResolver")
+//	public MultipartResolver multipartResolver() throws IOException {
+//		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
+//		resolver.setDefaultEncoding("UTF-8");
+//		resolver.setResolveLazily(true);//resolveLazily属性启用是为了推迟文件解析，以在在UploadAction中捕获文件大小异常
+//		resolver.setMaxInMemorySize(40960);
+//		resolver.setMaxUploadSize(50 * 1024 * 1024);//上传文件大小 50M 50*1024*1024
+//		resolver.setUploadTempDir(new FileSystemResource("/upload/tmp"));
+//
+//		return resolver;
+//	}
+
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new CacheControlInterceptor());

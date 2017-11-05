@@ -12,6 +12,8 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
+import java.nio.file.Paths;
+
 @SpringBootApplication(
 		exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class},
 		scanBasePackages = {"com.hytch.lfpspringmaster"})
@@ -28,7 +30,7 @@ public class LfpSpringMasterApplication {
 	@Bean
 	CommandLineRunner init(StorageService storageService) {
 		return (args) -> {
-			storageService.deleteAll();
+			storageService.deleteAll(Paths.get("files"));
 		};
 	}
 }

@@ -2,8 +2,6 @@ package com.hytch.lfpspringmaster.sys.upload.service;
 
 import com.hytch.lfpspringmaster.sys.upload.StorageException;
 import com.hytch.lfpspringmaster.sys.upload.StorageFileNotFoundException;
-import com.hytch.lfpspringmaster.sys.upload.StorageProperties;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
@@ -19,32 +17,28 @@ import java.util.stream.Stream;
 @Service
 public class FileSystemStorageService implements StorageService {
 
-	private final Path rootLocation;
-
-	@Autowired
-	public FileSystemStorageService(StorageProperties properties) {
-		this.rootLocation = Paths.get(properties.getLocation());
+	@Override
+	public void store(Path path, MultipartFile file) {
+		uploadFile(path, file);
 	}
 
 	@Override
-	public void store(MultipartFile file) {
-		uploadFile(file);
-	}
-
-	@Override
-	public void stores(List<MultipartFile> files) {
+	public void stores(Path path, List<MultipartFile> files) {
 		if (files == null || files.size() == 0) {
 			throw new StorageException("Failed to store empty files ");
 		}
-		files.forEach(this::uploadFile);
+		for (MultipartFile file : files) {
+			if (file != null) {
+				uploadFile(path, file);
+			}
+		}
 	}
 
 	@Override
-	public Stream<Path> loadAll() {
+	public Stream<Path> loadAll(Path filePath) {
 		try {
-			return Files.walk(this.rootLocation, 1)
-					.filter(path -> !path.equals(this.rootLocation))
-					.map(this.rootLocation::relativize);
+			return Files.walk(filePath, 2)
+					.filter(path -> !path.equals(filePath) && path.toString().contains("."));  //relativize
 		} catch (IOException e) {
 			throw new StorageException("Failed to read stored files", e);
 		}
@@ -52,14 +46,14 @@ public class FileSystemStorageService implements StorageService {
 	}
 
 	@Override
-	public Path load(String filename) {
-		return rootLocation.resolve(filename);
+	public Path load(Path filePath, String filename) {
+		return filePath.resolve(filename);
 	}
 
 	@Override
-	public Resource loadAsResource(String filename) {
+	public Resource loadAsResource(Path filePath, String filename) {
 		try {
-			Path file = load(filename);
+			Path file = load(filePath, filename);
 			Resource resource = new UrlResource(file.toUri());
 			if (resource.exists() || resource.isReadable()) {
 				return resource;
@@ -73,14 +67,14 @@ public class FileSystemStorageService implements StorageService {
 	}
 
 	@Override
-	public void deleteAll() {
-		FileSystemUtils.deleteRecursively(rootLocation.toFile());
+	public void deleteAll(Path filePath) {
+		FileSystemUtils.deleteRecursively(filePath.toFile());
 	}
 
-	private Path init(String suffix) {
+	private Path init(Path filePath, String suffix) {
 		try {
 //			Files.createDirectory(rootLocation);   //单个目录
-			return Files.createDirectories(Paths.get(rootLocation.toString(), "/" + suffix)); //多级目录
+			return Files.createDirectories(Paths.get(filePath.toString(), "/" + suffix)); //多级目录
 		} catch (FileAlreadyExistsException e) {
 //			throw new StorageException("Could not initialize storage", e);
 		} catch (IOException e) {
@@ -90,7 +84,7 @@ public class FileSystemStorageService implements StorageService {
 		return null;
 	}
 
-	private void uploadFile(MultipartFile file) {
+	private void uploadFile(Path filePath, MultipartFile file) {
 		try {
 			if (file == null || file.isEmpty()) {
 				return;
@@ -103,8 +97,8 @@ public class FileSystemStorageService implements StorageService {
 				suffix = "tmp";
 			}
 
-			if (!rootLocation.isAbsolute()) {
-				Path path = init(suffix);
+			if (!filePath.isAbsolute()) {
+				Path path = init(filePath, suffix);
 				if (path == null) {
 					throw new StorageException("获取存储路径不存在");
 				}

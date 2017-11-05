@@ -8,16 +8,29 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties("storage")
 public class StorageProperties {
 
+	private static final String FILE = "files/";
 	/**
-	 * Folder location for storing files
+	 * Folder upload for storing files
 	 */
-	private String location = "upload";
+	private String upload = FILE + "upload";
+	/**
+	 * 附件保存位置
+	 */
+	private String addAttachment = FILE + "attachment";
 
-	public String getLocation() {
-		return location;
+	public String getAddAttachment() {
+		return addAttachment;
 	}
 
-	public void setLocation(String location) {
-		this.location = location;
+	public void setAddAttachment(String addAttachment) {
+		this.addAttachment = addAttachment;
+	}
+
+	public String getUpload() {
+		return upload;
+	}
+
+	public void setUpload(String upload) {
+		this.upload = upload;
 	}
 }

@@ -1,6 +1,7 @@
 package com.hytch.lfpspringmaster.api;
 
 import com.hytch.lfpspringmaster.base.Result;
+import com.hytch.lfpspringmaster.sys.upload.StorageProperties;
 import com.hytch.lfpspringmaster.sys.upload.service.StorageService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -12,6 +13,8 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -29,9 +32,14 @@ public class UploadController {
 
 	private final StorageService storageService;
 
+	private final Path rootLocation;
+
 	@Autowired
-	public UploadController(StorageService storageService) {
+	public UploadController(
+			StorageService storageService,
+			StorageProperties properties) {
 		this.storageService = storageService;
+		this.rootLocation = Paths.get(properties.getUpload());
 	}
 
 	@ApiOperation(value = "单文件上传", notes = "单文件上传")
@@ -40,13 +48,13 @@ public class UploadController {
 			@ApiResponse(code = 404, message = "server not available", response = String.class)})
 	@PostMapping(value = "/importSingle", produces = {"application/json"})
 
-	public String uploadSuccess(
+	public Result uploadSuccess(
 			@RequestParam("importFile") MultipartFile importFile) {
 		if (importFile.isEmpty()) {
-			return "false";
+			return new Result("upload false");
 		}
-		storageService.store(importFile);
-		return "upload success";
+		storageService.store(rootLocation, importFile);
+		return new Result("upload success");
 	}
 
 	@ApiOperation(value = "多文件上传", notes = "多文件上传")
@@ -57,7 +65,7 @@ public class UploadController {
 	public String multiUploadSuccess(
 			@RequestParam("importFile") MultipartFile[] importFile) {
 
-		storageService.stores(Arrays.asList(importFile));
+		storageService.stores(rootLocation, Arrays.asList(importFile));
 		return "upload success";
 	}
 
@@ -80,14 +88,14 @@ public class UploadController {
 		files.add(importFile4);
 		files.add(importFile5);
 
-		storageService.stores(files);
+		storageService.stores(rootLocation, files);
 		return new Result("upload success");
 	}
 
 	@ApiOperation(value = "删除文件", notes = "删除文件")
 	@DeleteMapping(value = "delete")
 	public int delete(String id) {
-		storageService.deleteAll();
+		storageService.deleteAll(rootLocation);
 
 		return Integer.valueOf(id);
 	}

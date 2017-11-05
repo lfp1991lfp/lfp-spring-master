@@ -65,7 +65,7 @@ public class ApplicationConfigMVC extends WebMvcConfigurerAdapter {
 //	@Bean
 //	MultipartConfigElement multipartConfigElement() {
 //		MultipartConfigFactory factory = new MultipartConfigFactory();
-//		factory.setLocation("/app/pttms/tmp");
+//		factory.setUpload("/app/pttms/tmp");
 //		return factory.createMultipartConfig();
 //	}
 

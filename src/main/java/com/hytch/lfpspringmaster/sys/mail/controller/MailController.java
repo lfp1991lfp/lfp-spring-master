@@ -76,7 +76,7 @@ public class MailController {
 		storageService.stores(attachPath, files);
 		List<Path> paths =
 				storageService.loadAll(attachPath).collect(Collectors.toList());
-		service.sendThymeleaf(customMessage, "mailTemplates", paths);
+		service.sendThymeleaf(customMessage, "mailTemplates1", paths);
 		return new Result("发送成功");
 	}
 

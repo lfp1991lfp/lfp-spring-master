@@ -24,6 +24,7 @@ import java.nio.file.Paths;
 public class LfpSpringMasterApplication {
 
 	public static void main(String[] args) {
+		System.setProperty("mail.mime.splitlongparameters", "false");
 		SpringApplication.run(LfpSpringMasterApplication.class, args);
 	}
 

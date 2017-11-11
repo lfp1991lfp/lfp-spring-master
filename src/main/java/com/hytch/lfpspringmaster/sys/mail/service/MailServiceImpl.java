@@ -88,11 +88,12 @@ public class MailServiceImpl implements MailService {
 	public void sendThymeleaf(
 			CustomMessage customMessage, String template, List<Path> file) {
 		final HashMap datas = new HashMap();
+		datas.put("messages", customMessage.getContent());
 		MimeMessagePreparator preparator = mimeMessage -> {
 			MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage, ISMULTIPART);
 			send(customMessage, file, messageHelper);
-			messageHelper.setText(customMessage.getContent());
-//			messageHelper.setText(contentBuilder.buildMessage(template, datas), ISHTML);
+//			messageHelper.setText(customMessage.getContent());
+			messageHelper.setText(contentBuilder.buildMessage(template, datas), ISHTML);
 		};
 		mailSender.send(preparator);
 	}

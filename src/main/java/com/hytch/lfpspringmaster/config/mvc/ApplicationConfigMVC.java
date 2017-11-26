@@ -23,7 +23,7 @@ public class ApplicationConfigMVC extends WebMvcConfigurerAdapter {
 	 */
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//		registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
+		registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
 		//配置swagger日志的访问
 		registry.addResourceHandler("swagger-ui.html")
 				.addResourceLocations("classpath:/META-INF/resources/");
@@ -54,6 +54,7 @@ public class ApplicationConfigMVC extends WebMvcConfigurerAdapter {
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/api-docs/").setViewName("redirect:swagger-ui.html");
+		registry.addViewController("/ws").setViewName("/ws");  //ws.html的映射路径
 	}
 
 	@Bean

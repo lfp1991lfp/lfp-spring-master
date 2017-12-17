@@ -6252,3 +6252,717 @@ Caused by: java.net.ConnectException: Connection refused
 14278 [http-nio-8082-exec-1] DEBUG druid.sql.Connection - {conn-10001} setAutoCommit true
 14279 [http-nio-8082-exec-1] DEBUG druid.sql.Connection - {conn-10001} pool-recycle
 68572 [MessageBroker-1] INFO  o.s.w.s.c.WebSocketMessageBrokerStats - WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+1352 [restartedMain] INFO  c.h.l.LfpSpringMasterApplication - Starting LfpSpringMasterApplication on lfpMacBook-Pro.local with PID 1080 (/Users/fangpenglin/Downloads/003.project/houtai/lfp-spring-master/target/classes started by fangpenglin in /Users/fangpenglin/Downloads/003.project/houtai/lfp-spring-master)
+1361 [restartedMain] DEBUG c.h.l.LfpSpringMasterApplication - Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+1362 [restartedMain] INFO  c.h.l.LfpSpringMasterApplication - The following profiles are active: dev
+1639 [background-preinit] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+3021 [restartedMain] DEBUG o.m.s.m.ClassPathMapperScanner - Identified candidate component class: file [/Users/fangpenglin/Downloads/003.project/houtai/lfp-spring-master/target/classes/com/hytch/lfpspringmaster/model/mapper/ClientUserDao.class]
+3021 [restartedMain] DEBUG o.m.s.m.ClassPathMapperScanner - Identified candidate component class: file [/Users/fangpenglin/Downloads/003.project/houtai/lfp-spring-master/target/classes/com/hytch/lfpspringmaster/model/mapper/GoodsDao.class]
+3021 [restartedMain] DEBUG o.m.s.m.ClassPathMapperScanner - Identified candidate component class: file [/Users/fangpenglin/Downloads/003.project/houtai/lfp-spring-master/target/classes/com/hytch/lfpspringmaster/model/mapper/UserDao.class]
+3022 [restartedMain] DEBUG o.m.s.m.ClassPathMapperScanner - Creating MapperFactoryBean with name 'clientUserDao' and 'com.hytch.lfpspringmaster.model.mapper.ClientUserDao' mapperInterface
+3022 [restartedMain] DEBUG o.m.s.m.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'clientUserDao'.
+3022 [restartedMain] DEBUG o.m.s.m.ClassPathMapperScanner - Creating MapperFactoryBean with name 'goodsDao' and 'com.hytch.lfpspringmaster.model.mapper.GoodsDao' mapperInterface
+3023 [restartedMain] DEBUG o.m.s.m.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'goodsDao'.
+3023 [restartedMain] DEBUG o.m.s.m.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userDao' and 'com.hytch.lfpspringmaster.model.mapper.UserDao' mapperInterface
+3023 [restartedMain] DEBUG o.m.s.m.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userDao'.
+3406 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+5514 [restartedMain] INFO  o.a.c.core.StandardService - Starting service [Tomcat]
+5515 [restartedMain] INFO  o.a.c.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.20
+5756 [localhost-startStop-1] INFO  o.a.c.c.C.[.[.[/demo] - Initializing Spring embedded WebApplicationContext
+5757 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3971 ms
+6320 [restartedMain] DEBUG o.a.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+6363 [restartedMain] DEBUG o.m.s.SqlSessionFactoryBean - Property 'mapperLocations' was not specified or no matching resources found
+7681 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/register],methods=[POST]}" onto public com.hytch.lfpspringmaster.model.ClientUser com.hytch.lfpspringmaster.api.ClientUserController.register(com.hytch.lfpspringmaster.model.ClientUser) throws com.hytch.lfpspringmaster.config.mvc.exception.ServiceApiException
+7682 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/update/{id}],methods=[PUT]}" onto public com.hytch.lfpspringmaster.model.ClientUser com.hytch.lfpspringmaster.api.ClientUserController.update(java.lang.String,com.hytch.lfpspringmaster.model.ClientUser) throws com.hytch.lfpspringmaster.config.mvc.exception.ServiceApiException
+7683 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/delete],methods=[DELETE]}" onto public int com.hytch.lfpspringmaster.api.ClientUserController.delete(java.lang.String)
+7683 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/user/login],methods=[GET]}" onto public com.hytch.lfpspringmaster.model.ClientUser com.hytch.lfpspringmaster.api.ClientUserController.login(java.lang.String,java.lang.String)
+7686 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/good/add],methods=[POST]}" onto public com.hytch.lfpspringmaster.model.Goods com.hytch.lfpspringmaster.api.GoodsController.addGoods(com.hytch.lfpspringmaster.model.Goods)
+7687 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/good/delete/{id}],methods=[DELETE]}" onto public int com.hytch.lfpspringmaster.api.GoodsController.deleteGoods(int)
+7689 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/good/update/{id}],methods=[PATCH]}" onto public com.hytch.lfpspringmaster.model.Goods com.hytch.lfpspringmaster.api.GoodsController.updateGoods(int,com.hytch.lfpspringmaster.model.Goods)
+7690 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/good/find/{id}],methods=[GET]}" onto public com.hytch.lfpspringmaster.model.Goods com.hytch.lfpspringmaster.api.GoodsController.findGoods(int)
+7690 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/good/find/all],methods=[GET]}" onto public java.util.List<com.hytch.lfpspringmaster.model.Goods> com.hytch.lfpspringmaster.api.GoodsController.findAllGoods()
+7692 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/upload/delete],methods=[DELETE]}" onto public int com.hytch.lfpspringmaster.api.UploadController.delete(java.lang.String)
+7693 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/upload/importSingle],methods=[POST],produces=[application/json]}" onto public com.hytch.lfpspringmaster.base.Result com.hytch.lfpspringmaster.api.UploadController.uploadSuccess(org.springframework.web.multipart.MultipartFile)
+7693 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/upload/importMultipleTest],methods=[POST],produces=[application/json]}" onto public com.hytch.lfpspringmaster.base.Result com.hytch.lfpspringmaster.api.UploadController.multiUploadSuccess(org.springframework.web.multipart.MultipartFile,org.springframework.web.multipart.MultipartFile,org.springframework.web.multipart.MultipartFile,org.springframework.web.multipart.MultipartFile,org.springframework.web.multipart.MultipartFile)
+7694 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/upload/importMultiple],methods=[POST],produces=[application/json]}" onto public java.lang.String com.hytch.lfpspringmaster.api.UploadController.multiUploadSuccess(org.springframework.web.multipart.MultipartFile[])
+7696 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/mail/send],methods=[POST]}" onto public com.hytch.lfpspringmaster.base.Result com.hytch.lfpspringmaster.sys.mail.controller.MailController.sendMessage(com.hytch.lfpspringmaster.sys.mail.model.CustomMessage)
+7696 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/mail/sendHtml],methods=[POST]}" onto public com.hytch.lfpspringmaster.base.Result com.hytch.lfpspringmaster.sys.mail.controller.MailController.sendMessageHtml(com.hytch.lfpspringmaster.sys.mail.model.CustomMessage)
+7697 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/mail/sendAttachment],methods=[POST]}" onto public com.hytch.lfpspringmaster.base.Result com.hytch.lfpspringmaster.sys.mail.controller.MailController.sendAttachment(com.hytch.lfpspringmaster.sys.mail.model.CustomMessage,org.springframework.web.multipart.MultipartFile)
+7697 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/mail/sendAttachments],methods=[POST]}" onto public com.hytch.lfpspringmaster.base.Result com.hytch.lfpspringmaster.sys.mail.controller.MailController.sendAttachments(com.hytch.lfpspringmaster.sys.mail.model.CustomMessage,org.springframework.web.multipart.MultipartFile,org.springframework.web.multipart.MultipartFile,org.springframework.web.multipart.MultipartFile,org.springframework.web.multipart.MultipartFile)
+7700 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+7701 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+7702 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+7707 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+7707 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+8480 [restartedMain] DEBUG s.d.s.w.PropertySourcedRequestMappingHandlerMapping - initialising the handler methods
+8483 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/api/v1] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+8772 [restartedMain] INFO  o.s.w.s.s.s.WebSocketHandlerMapping - Mapped URL path [/endpointSang/**] onto handler of type [class org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler]
+8858 [restartedMain] INFO  o.s.w.s.m.WebSocketAnnotationMethodMessageHandler - Mapped "{[/welcome],messageType=[MESSAGE]}" onto public com.hytch.lfpspringmaster.sys.websocket.model.ResponseClientMessage com.hytch.lfpspringmaster.sys.websocket.controller.WsController.say(com.hytch.lfpspringmaster.sys.websocket.model.RequestClientMessage)
+9080 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@111adac0: startup date [Sun Dec 17 23:20:13 CST 2017]; root of context hierarchy
+9091 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Detected ResponseBodyAdvice bean in dataResponseBodyAdvice
+9129 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/api-docs/] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+9129 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/ws] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+9147 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+9148 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/swagger-ui.html] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+9148 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+9152 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler]
+9175 [restartedMain] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected ResponseBodyAdvice implementation in dataResponseBodyAdvice
+9175 [restartedMain] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in mvcGlobeException
+9205 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+10184 [restartedMain] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Postpone listening for Redis messages until actual listeners are added
+10184 [restartedMain] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Started RedisMessageListenerContainer
+10979 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+11020 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+11084 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+11102 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type I
+11103 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |delete|
+11104 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |delete|
+11107 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |delete|
+11115 [restartedMain] DEBUG s.d.s.DefaultModelProvider - Skipping model of type I as its either a container type, map, enum or base type, or its already been handled
+11118 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Did not find any parameter models for int
+11118 [restartedMain] DEBUG s.d.s.DefaultModelDependencyProvider - Marking base type I as seen
+11138 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: int
+11140 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method delete
+11154 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:int
+11160 [restartedMain] DEBUG s.d.s.r.o.VendorExtensionsReader - Extension count 1 for method delete
+11175 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type Lcom/hytch/lfpspringmaster/model/ClientUser;
+11175 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |login|
+11176 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |login|
+11176 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Adding return parameter of type Lcom/hytch/lfpspringmaster/model/ClientUser;
+11176 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |login|
+11208 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property id
+11212 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getId
+11214 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'id' renamed to 'id'
+11214 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property id to model
+11215 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getId
+11216 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getId
+11216 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getId
+11219 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getId
+11221 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property name
+11222 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getName
+11222 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'name' renamed to 'name'
+11223 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property name to model
+11223 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getName
+11223 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getName
+11223 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getName
+11223 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getName
+11224 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property account
+11224 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getAccount
+11224 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'account' renamed to 'account'
+11224 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property account to model
+11224 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getAccount
+11225 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getAccount
+11225 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getAccount
+11225 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getAccount
+11225 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property password
+11225 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPassword
+11226 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'password' renamed to 'password'
+11226 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property password to model
+11226 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPassword
+11226 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPassword
+11226 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPassword
+11226 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPassword
+11226 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property clientVersion
+11227 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getClientVersion
+11227 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'clientVersion' renamed to 'clientVersion'
+11227 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property clientVersion to model
+11227 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getClientVersion
+11227 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getClientVersion
+11228 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getClientVersion
+11228 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getClientVersion
+11228 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property clientVersionName
+11228 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getClientVersionName
+11228 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'clientVersionName' renamed to 'clientVersionName'
+11229 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property clientVersionName to model
+11229 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getClientVersionName
+11229 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getClientVersionName
+11229 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getClientVersionName
+11229 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getClientVersionName
+11230 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property clientType
+11230 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getClientType
+11231 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'clientType' renamed to 'clientType'
+11231 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property clientType to model
+11231 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getClientType
+11231 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getClientType
+11231 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getClientType
+11232 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getClientType
+11232 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property phoneSys
+11232 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPhoneSys
+11232 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'phoneSys' renamed to 'phoneSys'
+11232 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property phoneSys to model
+11233 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPhoneSys
+11233 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPhoneSys
+11233 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPhoneSys
+11233 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPhoneSys
+11240 [restartedMain] DEBUG s.d.s.DefaultModelProvider - Inferred 8 properties. Properties found account, clientType, clientVersion, clientVersionName, id, name, password, phoneSys
+11243 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Generated parameter model id: ClientUser, name: ClientUser, schema: {} models
+11243 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Adding a new model with key ClientUser
+11246 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: ClientUser
+11247 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method login
+11248 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:ClientUser
+11249 [restartedMain] DEBUG s.d.s.r.o.VendorExtensionsReader - Extension count 1 for method login
+11250 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type Lcom/hytch/lfpspringmaster/model/ClientUser;
+11250 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |register|
+11250 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding input parameter of type Lcom/hytch/lfpspringmaster/model/ClientUser;
+11251 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |register|
+11251 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Adding return parameter of type Lcom/hytch/lfpspringmaster/model/ClientUser;
+11251 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |register|
+11252 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Generated parameter model id: ClientUser, name: ClientUser, schema: {} models
+11253 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property id
+11253 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setId
+11253 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'id' renamed to 'id'
+11253 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property id to model
+11254 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setId
+11254 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setId
+11254 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setId
+11255 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setId
+11255 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property name
+11255 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setName
+11255 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'name' renamed to 'name'
+11256 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property name to model
+11256 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setName
+11256 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setName
+11256 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setName
+11256 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setName
+11257 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property account
+11257 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setAccount
+11257 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'account' renamed to 'account'
+11257 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property account to model
+11257 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setAccount
+11257 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setAccount
+11258 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setAccount
+11258 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setAccount
+11258 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property password
+11258 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setPassword
+11258 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'password' renamed to 'password'
+11258 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property password to model
+11259 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setPassword
+11259 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setPassword
+11259 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setPassword
+11259 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setPassword
+11259 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property clientVersion
+11259 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setClientVersion
+11260 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'clientVersion' renamed to 'clientVersion'
+11260 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property clientVersion to model
+11260 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setClientVersion
+11260 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setClientVersion
+11260 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setClientVersion
+11260 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setClientVersion
+11260 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property clientVersionName
+11261 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setClientVersionName
+11261 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'clientVersionName' renamed to 'clientVersionName'
+11261 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property clientVersionName to model
+11261 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setClientVersionName
+11261 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setClientVersionName
+11261 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setClientVersionName
+11262 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setClientVersionName
+11262 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property clientType
+11262 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setClientType
+11263 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'clientType' renamed to 'clientType'
+11263 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property clientType to model
+11263 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setClientType
+11264 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setClientType
+11264 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setClientType
+11264 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setClientType
+11264 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property phoneSys
+11265 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setPhoneSys
+11265 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'phoneSys' renamed to 'phoneSys'
+11265 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property phoneSys to model
+11265 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setPhoneSys
+11265 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setPhoneSys
+11266 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setPhoneSys
+11266 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setPhoneSys
+11266 [restartedMain] DEBUG s.d.s.DefaultModelProvider - Inferred 8 properties. Properties found account, clientType, clientVersion, clientVersionName, id, name, password, phoneSys
+11267 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Generated parameter model id: ClientUser, name: ClientUser, schema: {} models
+11272 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: ClientUser
+11273 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method register
+11274 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:ClientUser
+11276 [restartedMain] DEBUG s.d.s.r.o.VendorExtensionsReader - Extension count 1 for method register
+11277 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type Lcom/hytch/lfpspringmaster/model/ClientUser;
+11278 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |update|
+11281 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding input parameter of type Lcom/hytch/lfpspringmaster/model/ClientUser;
+11281 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |update|
+11282 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Adding return parameter of type Lcom/hytch/lfpspringmaster/model/ClientUser;
+11282 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |update|
+11283 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Generated parameter model id: ClientUser, name: ClientUser, schema: {} models
+11283 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Generated parameter model id: ClientUser, name: ClientUser, schema: {} models
+11285 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: ClientUser
+11287 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method update
+11289 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:ClientUser
+11290 [restartedMain] DEBUG s.d.s.r.o.VendorExtensionsReader - Extension count 1 for method update
+11310 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type Lcom/hytch/lfpspringmaster/model/Goods;
+11310 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |addGoods|
+11314 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |addGoods|
+11315 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Adding return parameter of type Lcom/hytch/lfpspringmaster/model/Goods;
+11316 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |addGoods|
+11317 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property id
+11318 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getId
+11318 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'id' renamed to 'id'
+11318 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property id to model
+11318 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getId
+11319 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getId
+11319 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getId
+11319 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getId
+11319 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property name
+11320 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getName
+11321 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'name' renamed to 'name'
+11321 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property name to model
+11321 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getName
+11322 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getName
+11322 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getName
+11322 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getName
+11323 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property cover
+11323 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getCover
+11323 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'cover' renamed to 'cover'
+11324 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property cover to model
+11326 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getCover
+11327 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getCover
+11328 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getCover
+11328 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getCover
+11329 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property img
+11329 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getImg
+11329 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'img' renamed to 'img'
+11330 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property img to model
+11330 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getImg
+11330 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getImg
+11331 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getImg
+11331 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getImg
+11331 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property typeId
+11331 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getTypeId
+11332 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'typeId' renamed to 'typeId'
+11332 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property typeId to model
+11334 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getTypeId
+11334 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getTypeId
+11335 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getTypeId
+11336 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getTypeId
+11337 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property price
+11338 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPrice
+11338 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'price' renamed to 'price'
+11338 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property price to model
+11338 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPrice
+11339 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPrice
+11339 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPrice
+11339 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPrice
+11339 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property marketPrice
+11340 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getMarketPrice
+11340 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'marketPrice' renamed to 'marketPrice'
+11340 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property marketPrice to model
+11340 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getMarketPrice
+11340 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getMarketPrice
+11341 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getMarketPrice
+11341 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getMarketPrice
+11341 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property introduce
+11341 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getIntroduce
+11342 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'introduce' renamed to 'introduce'
+11342 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property introduce to model
+11342 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getIntroduce
+11343 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getIntroduce
+11343 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getIntroduce
+11343 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getIntroduce
+11343 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property brief
+11343 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getBrief
+11344 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'brief' renamed to 'brief'
+11344 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property brief to model
+11344 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getBrief
+11344 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getBrief
+11345 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getBrief
+11346 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getBrief
+11347 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property isSold
+11347 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getIsSold
+11347 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'isSold' renamed to 'isSold'
+11348 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property isSold to model
+11348 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getIsSold
+11349 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getIsSold
+11349 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getIsSold
+11349 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getIsSold
+11350 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property sales
+11350 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getSales
+11351 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'sales' renamed to 'sales'
+11351 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property sales to model
+11351 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getSales
+11351 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getSales
+11352 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getSales
+11352 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getSales
+11352 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property postage
+11353 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPostage
+11353 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'postage' renamed to 'postage'
+11354 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property postage to model
+11354 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPostage
+11354 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPostage
+11354 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPostage
+11355 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPostage
+11355 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property pv
+11356 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPv
+11356 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'pv' renamed to 'pv'
+11356 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property pv to model
+11356 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPv
+11356 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPv
+11357 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPv
+11357 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getPv
+11360 [restartedMain] DEBUG s.d.s.DefaultModelProvider - Inferred 13 properties. Properties found brief, cover, id, img, introduce, isSold, marketPrice, name, postage, price, pv, sales, typeId
+11361 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Generated parameter model id: Goods, name: Goods, schema: {} models
+11362 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Adding a new model with key Goods
+11368 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Expanding parameter type: com.hytch.lfpspringmaster.model.Goods
+11378 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@304ccb08
+11379 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@304ccb08, with type: 
+11385 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@682882f0
+11385 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@682882f0, with type: 
+11386 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2fb4d6af
+11386 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2fb4d6af, with type: 
+11386 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@3ab8527
+11386 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@3ab8527, with type: 
+11386 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@6dfa4086
+11387 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@6dfa4086, with type: 
+11387 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@41e960cb
+11387 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@41e960cb, with type: 
+11387 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@4861d7f7
+11387 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@4861d7f7, with type: 
+11388 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@17bce161
+11388 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@17bce161, with type: 
+11388 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@287d6d60
+11388 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@287d6d60, with type: 
+11389 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2218bf9c
+11389 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2218bf9c, with type: 
+11389 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@64801a47
+11389 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@64801a47, with type: 
+11389 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@14c7585f
+11390 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@14c7585f, with type: 
+11390 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@571221ca
+11390 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@571221ca, with type: 
+11390 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@309180eb
+11391 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@309180eb, with type: 
+11393 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@5427e69c
+11394 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@5427e69c, with type: 
+11395 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@7a0c49e7
+11395 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@7a0c49e7, with type: 
+11395 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@3c562b1d
+11396 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@3c562b1d, with type: 
+11398 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: Goods
+11400 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method addGoods
+11401 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:Goods
+11402 [restartedMain] DEBUG s.d.s.r.o.VendorExtensionsReader - Extension count 1 for method addGoods
+11403 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type I
+11403 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |deleteGoods|
+11405 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |deleteGoods|
+11406 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |deleteGoods|
+11406 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Did not find any parameter models for int
+11411 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: int
+11412 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method deleteGoods
+11413 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:int
+11414 [restartedMain] DEBUG s.d.s.r.o.VendorExtensionsReader - Extension count 1 for method deleteGoods
+11416 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type Ljava/util/List<Lcom/hytch/lfpspringmaster/model/Goods;>;
+11416 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |findAllGoods|
+11417 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |findAllGoods|
+11418 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |findAllGoods|
+11418 [restartedMain] DEBUG s.d.s.DefaultModelProvider - Skipping model of type Ljava/util/List<Lcom/hytch/lfpspringmaster/model/Goods;>; as its either a container type, map, enum or base type, or its already been handled
+11419 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Did not find any parameter models for java.util.List<com.hytch.lfpspringmaster.model.Goods>
+11420 [restartedMain] DEBUG s.d.s.DefaultModelDependencyProvider - Adding type for parameter Lcom/hytch/lfpspringmaster/model/Goods;
+11420 [restartedMain] DEBUG s.d.s.DefaultModelDependencyProvider - Recursively resolving dependencies for parameter Lcom/hytch/lfpspringmaster/model/Goods;
+11423 [restartedMain] DEBUG s.d.s.DefaultModelProvider - Inferred 13 properties. Properties found brief, cover, id, img, introduce, isSold, marketPrice, name, postage, price, pv, sales, typeId
+11429 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: List
+11431 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method findAllGoods
+11433 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:List
+11436 [restartedMain] DEBUG s.d.s.r.o.VendorExtensionsReader - Extension count 1 for method findAllGoods
+11437 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type Lcom/hytch/lfpspringmaster/model/Goods;
+11438 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |findGoods|
+11441 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |findGoods|
+11444 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |findGoods|
+11445 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Generated parameter model id: Goods, name: Goods, schema: {} models
+11447 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: Goods
+11448 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method findGoods
+11449 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:Goods
+11451 [restartedMain] DEBUG s.d.s.r.o.VendorExtensionsReader - Extension count 1 for method findGoods
+11453 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type Lcom/hytch/lfpspringmaster/model/Goods;
+11453 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |updateGoods|
+11455 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |updateGoods|
+11456 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |updateGoods|
+11456 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Generated parameter model id: Goods, name: Goods, schema: {} models
+11459 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Expanding parameter type: com.hytch.lfpspringmaster.model.Goods
+11460 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@389b5d15
+11461 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@389b5d15, with type: 
+11461 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2fdd4acc
+11461 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2fdd4acc, with type: 
+11462 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@31a99959
+11462 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@31a99959, with type: 
+11463 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@ba67019
+11464 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@ba67019, with type: 
+11464 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@69b7e78d
+11464 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@69b7e78d, with type: 
+11464 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2cf95b5d
+11464 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2cf95b5d, with type: 
+11465 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@51e76cca
+11465 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@51e76cca, with type: 
+11465 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@6979f857
+11465 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@6979f857, with type: 
+11465 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@3fa4e17a
+11466 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@3fa4e17a, with type: 
+11466 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@59616660
+11466 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@59616660, with type: 
+11466 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@338ad0ba
+11466 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@338ad0ba, with type: 
+11467 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@15172ddc
+11467 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@15172ddc, with type: 
+11467 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@d20b135
+11467 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@d20b135, with type: 
+11467 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@5f209497
+11467 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@5f209497, with type: 
+11468 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@3a4a80c9
+11468 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@3a4a80c9, with type: 
+11468 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@169f2391
+11468 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@169f2391, with type: 
+11468 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@1ebe916e
+11468 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@1ebe916e, with type: 
+11469 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: Goods
+11470 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method updateGoods
+11471 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:Goods
+11472 [restartedMain] DEBUG s.d.s.r.o.VendorExtensionsReader - Extension count 1 for method updateGoods
+11475 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type Lcom/hytch/lfpspringmaster/base/Result;
+11475 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |sendAttachment|
+11477 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |sendAttachment|
+11479 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |sendAttachment|
+11489 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property message
+11490 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getMessage
+11490 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'message' renamed to 'message'
+11491 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property message to model
+11491 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getMessage
+11491 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getMessage
+11491 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getMessage
+11492 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped getter for member getMessage
+11492 [restartedMain] DEBUG s.d.s.DefaultModelProvider - Inferred 1 properties. Properties found message
+11493 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Generated parameter model id: Result, name: Result, schema: {} models
+11493 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Adding a new model with key Result
+11507 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Expanding parameter type: com.hytch.lfpspringmaster.sys.mail.model.CustomMessage
+11508 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand expandable field: toPerson
+11514 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Expanding parameter type: java.util.List<java.lang.String>
+11515 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand collection/array field: toPerson
+11515 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@1df5f8f4
+11516 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@1df5f8f4, with type: 
+11516 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@280eebc8
+11516 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@280eebc8, with type: 
+11516 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@19eaab20
+11516 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@19eaab20, with type: 
+11518 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: Result
+11520 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method sendAttachment
+11521 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:Result
+11522 [restartedMain] DEBUG s.d.s.r.o.VendorExtensionsReader - Extension count 1 for method sendAttachment
+11528 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type Lcom/hytch/lfpspringmaster/base/Result;
+11528 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |sendAttachments|
+11530 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |sendAttachments|
+11531 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |sendAttachments|
+11531 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Generated parameter model id: Result, name: Result, schema: {} models
+11534 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Expanding parameter type: com.hytch.lfpspringmaster.sys.mail.model.CustomMessage
+11535 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand expandable field: toPerson
+11536 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Expanding parameter type: java.util.List<java.lang.String>
+11537 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand collection/array field: toPerson
+11538 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@b7ca726
+11539 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@b7ca726, with type: 
+11540 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@1afb76e0
+11540 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@1afb76e0, with type: 
+11541 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2b304ded
+11541 [restartedMain] DEBUG s.d.s.w.r.p.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2b304ded, with type: 
+11546 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: Result
+11547 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method sendAttachments
+11548 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:Result
+11549 [restartedMain] DEBUG s.d.s.r.o.VendorExtensionsReader - Extension count 1 for method sendAttachments
+11551 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type Lcom/hytch/lfpspringmaster/base/Result;
+11551 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |sendMessage|
+11552 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding input parameter of type Lcom/hytch/lfpspringmaster/sys/mail/model/CustomMessage;
+11552 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |sendMessage|
+11553 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |sendMessage|
+11553 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Generated parameter model id: Result, name: Result, schema: {} models
+11557 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property toPerson
+11560 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setToPerson
+11562 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'toPerson' renamed to 'toPerson'
+11563 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property toPerson to model
+11564 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setToPerson
+11564 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setToPerson
+11564 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setToPerson
+11565 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setToPerson
+11567 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property subject
+11568 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setSubject
+11569 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'subject' renamed to 'subject'
+11569 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property subject to model
+11570 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setSubject
+11570 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setSubject
+11570 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setSubject
+11570 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setSubject
+11571 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Reading property content
+11571 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setContent
+11571 [restartedMain] DEBUG s.d.s.p.ObjectMapperBeanPropertyNamingStrategy - Name 'content' renamed to 'content'
+11571 [restartedMain] DEBUG s.d.s.p.OptimizedModelPropertiesProvider - Adding property content to model
+11572 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setContent
+11572 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setContent
+11572 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setContent
+11572 [restartedMain] DEBUG s.d.s.p.bean.BeanModelProperty - Evaluating unwrapped setter for member setContent
+11573 [restartedMain] DEBUG s.d.s.DefaultModelProvider - Inferred 3 properties. Properties found content, subject, toPerson
+11573 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Generated parameter model id: CustomMessage, name: CustomMessage, schema: {} models
+11574 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Adding a new model with key CustomMessage
+11574 [restartedMain] DEBUG s.d.s.DefaultModelDependencyProvider - Adding type Ljava/util/List<Ljava/lang/String;>; for parameter toPerson
+11575 [restartedMain] DEBUG s.d.s.DefaultModelDependencyProvider - Recursively resolving dependencies for collectionElement type Ljava/lang/String;
+11575 [restartedMain] DEBUG s.d.s.DefaultModelDependencyProvider - Marking base type Ljava/lang/String; as seen
+11576 [restartedMain] DEBUG s.d.s.DefaultModelProvider - Skipping model of type Ljava/util/List<Ljava/lang/String;>; as its either a container type, map, enum or base type, or its already been handled
+11588 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: Result
+11590 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method sendMessage
+11591 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:Result
+11592 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type Lcom/hytch/lfpspringmaster/base/Result;
+11593 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |sendMessageHtml|
+11595 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding input parameter of type Lcom/hytch/lfpspringmaster/sys/mail/model/CustomMessage;
+11595 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |sendMessageHtml|
+11596 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |sendMessageHtml|
+11597 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Generated parameter model id: Result, name: Result, schema: {} models
+11598 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Generated parameter model id: CustomMessage, name: CustomMessage, schema: {} models
+11598 [restartedMain] DEBUG s.d.s.DefaultModelProvider - Skipping model of type Ljava/util/List<Ljava/lang/String;>; as its either a container type, map, enum or base type, or its already been handled
+11609 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: Result
+11610 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method sendMessageHtml
+11611 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:Result
+11614 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type I
+11614 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |delete|
+11616 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |delete|
+11617 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |delete|
+11618 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Did not find any parameter models for int
+11626 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: int
+11629 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method delete
+11630 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:int
+11633 [restartedMain] DEBUG s.d.s.r.o.VendorExtensionsReader - Extension count 1 for method delete
+11633 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_1
+11641 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type Lcom/hytch/lfpspringmaster/base/Result;
+11641 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |multiUploadSuccess|
+11646 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |multiUploadSuccess|
+11646 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |multiUploadSuccess|
+11647 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Adding input parameter of type Ljava/lang/String;
+11647 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Adding input parameter of type Ljava/lang/String;
+11648 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Adding input parameter of type Ljava/lang/String;
+11648 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Generated parameter model id: Result, name: Result, schema: {} models
+11648 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Adding a new model with key Result
+11648 [restartedMain] DEBUG s.d.s.DefaultModelProvider - Skipping model of type Ljava/lang/String; as its either a container type, map, enum or base type, or its already been handled
+11649 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Did not find any parameter models for java.lang.String
+11649 [restartedMain] DEBUG s.d.s.DefaultModelDependencyProvider - Marking base type Ljava/lang/String; as seen
+11655 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: Result
+11655 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method multiUploadSuccess
+11661 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:Result
+11664 [restartedMain] DEBUG s.d.s.r.o.VendorExtensionsReader - Extension count 1 for method multiUploadSuccess
+11667 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type Ljava/lang/String;
+11667 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |multiUploadSuccess|
+11668 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |multiUploadSuccess|
+11669 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |multiUploadSuccess|
+11670 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Adding input parameter of type Ljava/lang/String;
+11670 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Adding input parameter of type Ljava/lang/String;
+11670 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Adding input parameter of type Ljava/lang/String;
+11670 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Did not find any parameter models for java.lang.String
+11676 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: string
+11677 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method multiUploadSuccess
+11678 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:string
+11681 [restartedMain] DEBUG s.d.s.r.o.VendorExtensionsReader - Extension count 1 for method multiUploadSuccess
+11682 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: multiUploadSuccessUsingPOST_1
+11683 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Adding return parameter of type Lcom/hytch/lfpspringmaster/base/Result;
+11683 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Reading parameters models for handlerMethod |uploadSuccess|
+11684 [restartedMain] DEBUG s.d.s.w.r.o.OperationModelsProvider - Finished reading parameters models for handlerMethod |uploadSuccess|
+11684 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |uploadSuccess|
+11684 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Adding input parameter of type Ljava/lang/String;
+11684 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Adding input parameter of type Ljava/lang/String;
+11685 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationModelsProvider - Adding input parameter of type Ljava/lang/String;
+11687 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Generated parameter model id: Result, name: Result, schema: {} models
+11688 [restartedMain] DEBUG s.d.s.w.s.ApiModelReader - Did not find any parameter models for java.lang.String
+11710 [restartedMain] DEBUG s.d.s.w.r.o.OperationResponseClassReader - Setting spring response class to: Result
+11716 [restartedMain] DEBUG s.d.s.r.o.OperationAuthReader - Authorization count 0 for method uploadSuccess
+11721 [restartedMain] DEBUG s.d.s.r.o.SwaggerOperationResponseClassReader - Setting response class to:Result
+11726 [restartedMain] DEBUG s.d.s.r.o.VendorExtensionsReader - Extension count 1 for method uploadSuccess
+11803 [restartedMain] INFO  o.a.c.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+11832 [restartedMain] INFO  o.a.c.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+11869 [restartedMain] INFO  o.a.t.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+11969 [restartedMain] INFO  c.h.l.LfpSpringMasterApplication - Started LfpSpringMasterApplication in 11.424 seconds (JVM running for 12.959)
+13773 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.s.d.r.c.RedisConnectionUtils - Opening RedisConnection
+13804 [RMI TCP Connection(2)-127.0.0.1] WARN  o.s.b.a.h.RedisHealthIndicator - Health check failed
+org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:204)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:348)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:129)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:92)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:79)
+	at org.springframework.boot.actuate.health.RedisHealthIndicator.doHealthCheck(RedisHealthIndicator.java:52)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:43)
+	at org.springframework.boot.actuate.health.CompositeHealthIndicator.health(CompositeHealthIndicator.java:68)
+	at org.springframework.boot.actuate.endpoint.HealthEndpoint.invoke(HealthEndpoint.java:85)
+	at org.springframework.boot.actuate.endpoint.HealthEndpoint.invoke(HealthEndpoint.java:35)
+	at org.springframework.boot.actuate.endpoint.jmx.DataEndpointMBean.getData(DataEndpointMBean.java:46)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at sun.reflect.GeneratedMethodAccessor85.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:275)
+	at javax.management.modelmbean.RequiredModelMBean$4.run(RequiredModelMBean.java:1252)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at javax.management.modelmbean.RequiredModelMBean.invokeMethod(RequiredModelMBean.java:1246)
+	at javax.management.modelmbean.RequiredModelMBean.invoke(RequiredModelMBean.java:1085)
+	at org.springframework.jmx.export.SpringModelMBean.invoke(SpringModelMBean.java:90)
+	at javax.management.modelmbean.RequiredModelMBean.getAttribute(RequiredModelMBean.java:1562)
+	at org.springframework.jmx.export.SpringModelMBean.getAttribute(SpringModelMBean.java:109)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getAttribute(DefaultMBeanServerInterceptor.java:647)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.getAttribute(JmxMBeanServer.java:678)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1445)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1401)
+	at javax.management.remote.rmi.RMIConnectionImpl.getAttribute(RMIConnectionImpl.java:639)
+	at sun.reflect.GeneratedMethodAccessor69.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:324)
+	at sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:53)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:226)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:16)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:194)
+	... 50 common frames omitted
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.ConnectException: Connection refused
+	at redis.clients.jedis.Connection.connect(Connection.java:207)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:93)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1767)
+	at redis.clients.jedis.JedisFactory.makeObject(JedisFactory.java:106)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	... 53 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:184)
+	... 60 common frames omitted
+14406 [RMI TCP Connection(2)-127.0.0.1] DEBUG druid.sql.Connection - {conn-10001} connected
+14423 [RMI TCP Connection(2)-127.0.0.1] INFO  c.a.druid.pool.DruidDataSource - {dataSource-1} inited
+14425 [RMI TCP Connection(2)-127.0.0.1] DEBUG druid.sql.Connection - {conn-10001} pool-connect
+14440 [RMI TCP Connection(2)-127.0.0.1] DEBUG druid.sql.Connection - {conn-10001} pool-recycle
+14452 [RMI TCP Connection(2)-127.0.0.1] DEBUG druid.sql.Connection - {conn-10001} pool-connect
+14456 [RMI TCP Connection(2)-127.0.0.1] DEBUG druid.sql.Statement - {conn-10001, stmt-20000} created
+14616 [RMI TCP Connection(2)-127.0.0.1] DEBUG druid.sql.Statement - {conn-10001, stmt-20000, rs-50000} query executed. 154.703553 millis. SELECT 1
+14616 [RMI TCP Connection(2)-127.0.0.1] DEBUG druid.sql.ResultSet - {conn-10001, stmt-20000, rs-50000} open
+14618 [RMI TCP Connection(2)-127.0.0.1] DEBUG druid.sql.ResultSet - {conn-10001, stmt-20000, rs-50000} Header: [1]
+14623 [RMI TCP Connection(2)-127.0.0.1] DEBUG druid.sql.ResultSet - {conn-10001, stmt-20000, rs-50000} Result: [1]
+14630 [RMI TCP Connection(2)-127.0.0.1] DEBUG druid.sql.ResultSet - {conn-10001, stmt-20000, rs-50000} closed
+14631 [RMI TCP Connection(2)-127.0.0.1] DEBUG druid.sql.Statement - {conn-10001, stmt-20000} closed
+14632 [RMI TCP Connection(2)-127.0.0.1] DEBUG druid.sql.Connection - {conn-10001} pool-recycle
+18036 [Thread-34] DEBUG o.s.d.r.l.RedisMessageListenerContainer - Stopped RedisMessageListenerContainer
+18050 [Thread-34] DEBUG druid.sql.Connection - {conn-10001} closed
+18051 [Thread-34] INFO  c.a.druid.pool.DruidDataSource - {dataSource-1} closed

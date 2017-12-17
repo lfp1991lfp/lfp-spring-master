@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hytch.lfpspringmaster.model.mapper.GoodsDao">
+    <resultMap id="BaseResultMap" type="com.hytch.lfpspringmaster.model.Goods">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="c_g_ID" jdbcType="INTEGER" property="id"/>
+        <result column="c_g_NAME" jdbcType="VARCHAR" property="name"/>
+        <result column="c_g_COVER" jdbcType="VARCHAR" property="cover"/>
+        <result column="c_g_IMG" jdbcType="VARCHAR" property="img"/>
+        <result column="c_g_TYPE_ID" jdbcType="INTEGER" property="typeId"/>
+        <result column="c_g_PRICE" jdbcType="DOUBLE" property="price"/>
+        <result column="c_g_MARKET_PRICE" jdbcType="DOUBLE" property="marketPrice"/>
+        <result column="c_g_INTRODUCE" jdbcType="VARCHAR" property="introduce"/>
+        <result column="c_g_BRIEF" jdbcType="VARCHAR" property="brief"/>
+        <result column="c_g_IS_SOLD" jdbcType="CHAR" property="isSold"/>
+        <result column="c_g_SALES" jdbcType="INTEGER" property="sales"/>
+        <result column="c_g_POSTAGE" jdbcType="DOUBLE" property="postage"/>
+        <result column="c_g_PV" jdbcType="INTEGER" property="pv"/>
+    </resultMap>
+</mapper>

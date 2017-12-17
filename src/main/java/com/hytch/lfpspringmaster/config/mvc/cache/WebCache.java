@@ -32,9 +32,4 @@ public @interface WebCache {
 	long staleIfError() default -1L;
 
 	long staleWhileRevalidate() default -1L;
-
-	/**
-	 * 是否启用缓存，默认是启用状.
-	 */
-	boolean enableCache() default true;
 }

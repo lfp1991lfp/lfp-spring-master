@@ -11,5 +11,5 @@ public class ResponseTemplate {
 
 	String message;
 
-	int code;
+	int code = 1;   //默认成功
 }

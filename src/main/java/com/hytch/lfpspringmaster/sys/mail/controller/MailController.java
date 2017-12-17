@@ -70,7 +70,6 @@ public class MailController {
 	public Result sendAttachment(
 			CustomMessage customMessage,
 			@RequestParam MultipartFile file) {
-		// TODO: 17/11/5 邮件异步发送
 		List<MultipartFile> files = new ArrayList<>();
 		files.add(file);
 		storageService.stores(attachPath, files);

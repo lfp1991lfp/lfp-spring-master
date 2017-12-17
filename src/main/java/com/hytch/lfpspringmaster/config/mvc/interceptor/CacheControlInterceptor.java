@@ -82,18 +82,13 @@ public class CacheControlInterceptor extends HandlerInterceptorAdapter {
 		if (webCache == null) {
 			return null;
 		}
-		boolean enableCache = webCache.enableCache();
-		//若不许缓存，则返回null
-		if (!enableCache) {
-			return null;
-		}
 		final CachePolicy[] policies = webCache.policy();
-		if (0 <= webCache.maxAge()) {
-			this.appendDirective(builder, "max-age=" + Long.toString(webCache.maxAge()));
-		}
-
 		for (CachePolicy policy : policies) {
 			appendDirective(builder, policy.policy());
+		}
+
+		if (0 <= webCache.maxAge()) {
+			this.appendDirective(builder, "max-age=" + Long.toString(webCache.maxAge()));
 		}
 
 		if (0 <= webCache.sharedMaxAge()) {

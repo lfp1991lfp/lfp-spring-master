@@ -63,5 +63,9 @@
                domainObjectName="ClientUser" mapperName="ClientUserDao" alias="c_u">
             <generatedKey column="ID" sqlStatement="Mysql" identity="true"/>
         </table>
+        <table tableName="goods" schema="caoyi"
+               domainObjectName="Goods" mapperName="GoodsDao" alias="c_g">
+            <generatedKey column="ID" sqlStatement="Mysql" identity="true"/>
+        </table>
     </context>
 </generatorConfiguration>

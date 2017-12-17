@@ -33,7 +33,7 @@ public class ClientUserController {
 
 
 	@WebApi
-	@WebCache(maxAge = 30, policy = CachePolicy.PUBLIC, enableCache = false)
+	@WebCache(maxAge = 30, policy = CachePolicy.PUBLIC)
 	@ApiOperation(value = "用户登录", notes = "根据用户名和密码登录用户",
 			response = ClientUser.class)
 	@GetMapping(value = "login")

@@ -34,7 +34,7 @@ public class CacheControlInterceptor extends HandlerInterceptorAdapter {
 	}
 
 	@Override
-	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) {
 		WebCache webCache = getCacheControl(request, response, handler);
 		final String cache = this.createCacheControlHeader(webCache);
 		if (cache != null) {
@@ -82,7 +82,11 @@ public class CacheControlInterceptor extends HandlerInterceptorAdapter {
 		if (webCache == null) {
 			return null;
 		}
-
+		boolean enableCache = webCache.enableCache();
+		//若不许缓存，则返回null
+		if (!enableCache) {
+			return null;
+		}
 		final CachePolicy[] policies = webCache.policy();
 		if (0 <= webCache.maxAge()) {
 			this.appendDirective(builder, "max-age=" + Long.toString(webCache.maxAge()));

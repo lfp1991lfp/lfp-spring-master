@@ -33,11 +33,11 @@ public class ClientUserController {
 
 
 	@WebApi
-	@WebCache(maxAge = 30, policy = CachePolicy.PUBLIC)
+	@WebCache(maxAge = 30, policy = CachePolicy.PUBLIC, enableCache = false)
 	@ApiOperation(value = "用户登录", notes = "根据用户名和密码登录用户",
 			response = ClientUser.class)
 	@GetMapping(value = "login")
-	public ClientUser login(String account, String password) throws Exception {
+	public ClientUser login(String account, String password) {
 		ClientUser user = clientUserService.findClientUser(account, password);
 		if (user == null) {
 			user = new ClientUser();

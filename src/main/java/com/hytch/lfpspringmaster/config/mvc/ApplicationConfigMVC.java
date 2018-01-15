@@ -23,7 +23,9 @@ public class ApplicationConfigMVC extends WebMvcConfigurerAdapter {
 	 */
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
+		registry
+				.addResourceHandler("/**")
+				.addResourceLocations("classpath:/static/");
 		//配置swagger日志的访问
 		registry.addResourceHandler("swagger-ui.html")
 				.addResourceLocations("classpath:/META-INF/resources/");

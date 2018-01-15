@@ -72,19 +72,19 @@ spring:
       max-file-size: 20MB
       max-request-size: 100MB
       enabled: true
-#  mail:
-#    host: smtp.qq.com
-#    username: 549689774@qq.com
-#    password: hqdekqegjouhbcfd
-#    properties:
-#      mail:
-#        smtp:
-#          auth: true
-#          starttls:
-#            enable: true
-#            required: true
-#    port: 587
-#    protocol: smtp
+  mail:
+    host: smtp.qq.com
+    username: 549689774@qq.com
+    password: hqdekqegjouhbcfd
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    port: 587
+    protocol: smtp
   thymeleaf:
     cache: false
     prefix: classpath:/templates/
